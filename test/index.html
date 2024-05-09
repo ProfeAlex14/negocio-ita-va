@@ -26,7 +26,7 @@
             <a href="descuentos.html" class="navbar-item">Descuentos</a>
         </nav>
     </header>
-    <section>
+    <section class="contenido-principal">
 			<div class="descripciones">
 				<!--Primer parrafo con informacion e imagen exterior del multirubro-->
 				<article> 
@@ -83,14 +83,7 @@
     </footer>
 </body>
 <style>
-
-    ̣/*
-
-        Articulo de compra:162*285px
-
-    */   
-
-    * {
+* {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
@@ -107,6 +100,9 @@
         padding: 0;
         margin: 0;
         background-color: #efefef;
+        display: flex;
+        flex-wrap: wrap;
+        align-content:space-between;
     }
 
     a {
@@ -208,6 +204,11 @@
 
     }
 
+    .articulo-descripcion {
+        margin: 0;
+        grid-area: titulo;
+    }
+
     .articulo-compra-img {
         height: 100%;
     }
@@ -217,14 +218,36 @@
         transition: 250ms;
     }
 
-    .articulo-compra-descricion {
+    .articulo-compra-descripcion {
         font-size: .9rem;
         text-align: justify;
+        display: grid;
+        grid-template-rows: repeat(3, 20px);
+        grid-template-areas: 
+        "titulo"
+        "descuento"
+        "precio";
     }
 
-    .articulo-compra-descricion .articulo-precio {
+    .articulo-compra-descripcion .articulo-precio { /*¿Por que la doble clase?*/
         font-size: 1.2rem;
         color:rgb(0, 163, 92) !important;
+        margin: 0;
+    }
+
+    .articulo-precio {
+        grid-area: precio;
+    }
+
+    .articulo-precio-desc {
+        font-size: .8rem;
+        color:#395d00 !important;
+        margin: 0;
+        grid-area: descuento;
+    }
+
+    .contenido-principal {
+        padding: 20px;
     }
 
     #footer {
@@ -234,7 +257,6 @@
         justify-content: center;
         align-items: center;
         background-color: #395d00;
-        position: fixed;
         bottom: 0%;
     }
 
