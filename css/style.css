@@ -37,7 +37,6 @@ a {
     width: 100%;
     height: 100px;
     display: flex;
-    flex-wrap: wrap;
     box-shadow: 2px 2px 10px #aaaaaa;
     background-color: #c0eb83;
 }
@@ -78,6 +77,31 @@ a {
     background-color: #395d00;
     color: #fff;
     transition: 350ms;
+}
+
+.contenido-principal {
+    flex-basis: 1200px;
+    margin: 25px auto 25px auto;
+}
+
+.acerca-de-nosotros-descripciones {
+    width: inherit;
+    text-align: justify;
+    padding: 30px;
+}
+
+.acerca-de-nosotros {
+    background-color: #fff;
+    box-shadow: 2px 2px 10px #aaa;
+    border-radius: 15px;
+    padding: 30px;
+
+}
+
+.iframe-mapa-ita-va {
+    width: 100%;
+    height: 600px;
+
 }
 
 .metodos-de-pago-box {
@@ -147,6 +171,7 @@ a {
     gap: 10px;
     flex-wrap: wrap;
     padding: 10px;
+    justify-content: center;
 }
 
 .articulo-compra-box {
@@ -161,6 +186,11 @@ a {
     padding: 10px;
 }
 
+.articulo-carga-virtual {
+    height: 350px;
+    width: 300px;
+}
+
 .articulo-compra-box:hover {
     color: #c0eb83
 }
@@ -173,6 +203,9 @@ a {
 .articulo-descripcion {
     margin: 0;
     grid-area: titulo;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .articulo-compra-img {
@@ -186,6 +219,7 @@ a {
 
 .articulo-compra-descripcion {
     font-size: .9rem;
+    width: 100%;
     text-align: justify;
     display: grid;
     grid-template-rows: repeat(3, 20px);
