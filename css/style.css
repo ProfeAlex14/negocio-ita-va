@@ -86,12 +86,13 @@ a {
 
 .contenido-principal {
     width: 1200px;
-    margin: 25px auto 25px auto;
+    margin: 25px auto 25px auto; /*Agregamos un margen automatico a los costados para 
+                                que se centre el elemento y uno pequeños arriba/abajo */
 }
 
 .acerca-de-nosotros-descripciones {
-    width: inherit;
-    text-align: justify;
+    width: inherit; /* Es es para copiar el ancho del elemento padre*/
+    text-align: justify; /*Esto es para justificar el texto*/
     padding: 30px;
 }
 
@@ -110,7 +111,7 @@ a {
 }
 
 .imagenes-negocio-box {
-    text-align: center;
+    text-align: center; /*Esto es para centrar horizontalmente las imagenes*/
     
 }
 
@@ -126,7 +127,8 @@ a {
     height: 500px;
     gap: 100px;
     display: flex;
-    margin: auto;
+    margin: auto; /*esto es para que haigan margenes automaticos en cada lado del elemento, 
+                    logrando centrar el mismo en este caso*/
     background-color: #fff;
     box-shadow: 2px 2px 10px #aaa;
     border-radius: 15px;
@@ -136,7 +138,7 @@ a {
     width: 500px;
     height: 100%;
     border-radius: 15px 0 0 15px;
-    background-image: url(../images/metodos-de-pago.jpg);
+    background-image: url(../images/metodos-de-pago.jpg); /* Esto es para poner una imagen de fondo en elemento*/
     background-size: cover;
 }
 
@@ -152,11 +154,11 @@ a {
 .metodos-de-pago-imgs {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-around; /* Esto es para que haigan espacios alrededor de los elementos dentro del contenedor*/
     height: 20px;
 }
 
-.metodo-de-pago-img-item:first-child {
+.metodo-de-pago-img-item:first-child /* Pusimos first child para modificar el alto del primer elemento con la clase: .metodo-de-pago-img-item*/{
     height: 35px;
 }
 .metodo-de-pago-img-item {
@@ -216,20 +218,13 @@ a {
 
 }
 
-.articulo-descripcion {
-    margin: 0;
-    grid-area: titulo;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .articulo-compra-img {
     height: 100%;
 }
 
 .articulo-compra-img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* Al pasar el mouse por encima la aumenta la escala 
+                            de la imagen sin modificar su alto y ancho de manera real*/
     transition: 250ms;
 }
 
@@ -237,30 +232,34 @@ a {
     font-size: .9rem;
     width: 100%;
     text-align: justify;
-    display: grid;
-    grid-template-rows: repeat(3, 20px);
+    display: grid; /* Aca se añade grid para que los elementos de acomoden en una cuadrilla*/
+    grid-template-rows: repeat(3, 20px); /* Aca se pide tres filas de 20px cada una*/
     grid-template-areas:
-        "titulo"
-        "descuento"
-        "precio";
+        "titulo" /* Se pide que la primera fila sea para el titulo o descripcion del producto*/
+        "descuento" /* Esta para el descuento*/
+        "precio"; /* Esta para el precio*/
 }
 
-.articulo-compra-descripcion .articulo-precio {
-    /*¿Por que la doble clase?*/
-    font-size: 1.2rem;
-    color: rgb(0, 163, 92) !important;
+.articulo-descripcion {
     margin: 0;
-}
-
-.articulo-precio {
-    grid-area: precio;
+    grid-area: titulo; /* Este ocupara la fila "titulo"*/
+    white-space: nowrap; /* Esto es para que el texto no pase para abajo*/
+    overflow: hidden; /* Esto es para que no se vea la barra de scroll*/
+    text-overflow: ellipsis; /* Esto es para poner tres puntos la final del ancho (...)*/
 }
 
 .articulo-precio-desc {
     font-size: .8rem;
     color: #395d00 !important;
     margin: 0;
-    grid-area: descuento;
+    grid-area: descuento; /* Este ocuparia la fila "descuento" */
+}
+
+.articulo-precio {
+    font-size: 1.2rem; 
+    color: rgb(0, 163, 92) !important;
+    margin: 0;
+    grid-area: precio; /* Ahora con lo visto anteriormente a este elemento se le dice que ocupara la fila "precio"*/
 }
 
 #footer {
@@ -278,7 +277,7 @@ a {
     gap: 10px;
 }
 
-.bi {
+.bi { /* Esta clase es para los elementos svg que se encuentran en el footer*/
     width: 30px;
     height: 30px;
     color: #fff;
